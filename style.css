@@ -1,5 +1,28 @@
+
+:root{
+    --text-color:white;
+    --background--img:url("./assets/bg-desktop.jpg");
+    --border-color:white;
+    --surface-color: rgba(255, 255, 255, 0.1);
+    --surface-color-hover:white;
+    --surface--color-text-hover:black;
+    --switch-bg-url: url("./assets/MoonStars.svg");
+}
+
+.light{
+    --text-color:black;
+    --background--img:url("./assets/bg-desktop-light.jpg");
+    --border-color:black;
+    --surface-color: rgba(0, 0, 0, 0.1);
+    --surface-color-hover:black;
+    --surface--color-text-hover:white;
+    --switch-bg-url: url("./assets/Sun.svg");
+}
+
+
+
 body {
-    background-image: url("./assets/bg-desktop.jpg");
+    background-image: var(--background--img);
     background-size: cover;
 
     font-family: "Roboto";
@@ -28,11 +51,29 @@ body {
     width: 112px;
     height: 112px;
     border-radius: 100%;
-    border: 1px solid white;
+    border: 1px solid var( --border-color);
 }
 
 #perfil span {
-    color: white;
+    color:var(--text-color);
+}
+
+#switch{
+    position: relative;
+    width:64px;
+    margin:4px auto;
+}
+
+#switch button{
+    width:36px;
+    height:36px;
+    border-radius:100%;
+    background-image:var(--switch-bg-url);
+    border: none;
+    background-color: white;
+    background-repeat:no-repeat;
+    background-position: center;
+
 }
 
 .menu ul {
@@ -41,12 +82,11 @@ body {
 }
 
 .menu ul li {
-    padding: 12px;
     text-align: center;
-    border: 1px solid white;
+    border: 1px solid var( --border-color);
     border-radius: 6px;
     margin: 20px 0;
-    background-color: rgba(255, 255, 255, 0.1);
+    background-color:var(--surface-color);
     transition: 0.2s ease;
 }
 
@@ -55,16 +95,18 @@ body {
     align-items: center;
     flex-direction: row;
     justify-content: center;
-    color: white;
+    color:var(--text-color);
     text-decoration: none;
+    height: 100%;
+    padding: 12px;
 }
 
 .menu ul li:hover{
-    background-color: white;
+    background-color:var( --surface-color-hover);
 }
 
 .menu ul li:hover a{
-    color: black;
+    color:var(--surface--color-text-hover);
 }
 
 .social{
@@ -74,7 +116,7 @@ body {
     align-items: center;
     gap:12px;
     border-top-width:1px;
-    border-top-color:white;
+    border-top-color:var( --border-color);
     border-top-style: solid;
     width:100%;
     padding-top: 12px;
@@ -82,7 +124,7 @@ body {
 }
 
 .social a{
-    color: white;
+    color:var(--text-color);
     font-size: 30px;
     text-decoration: none;
     transition: 0.6s ease;
